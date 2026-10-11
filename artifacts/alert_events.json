@@ -1,0 +1,249 @@
+[
+  {
+    "index": 0,
+    "true_class": "gunshot",
+    "predicted": "gunshot",
+    "confidence": 0.7851,
+    "alert": false,
+    "inference_ms": 25.25
+  },
+  {
+    "index": 1,
+    "true_class": "vehicle",
+    "predicted": "vehicle",
+    "confidence": 0.6274,
+    "alert": false,
+    "inference_ms": 13.36
+  },
+  {
+    "index": 2,
+    "true_class": "gunshot",
+    "predicted": "gunshot",
+    "confidence": 0.8835,
+    "alert": false,
+    "inference_ms": 14.65
+  },
+  {
+    "index": 3,
+    "true_class": "chainsaw",
+    "predicted": "vehicle",
+    "confidence": 0.8096,
+    "alert": false,
+    "inference_ms": 14.61
+  },
+  {
+    "index": 4,
+    "true_class": "chainsaw",
+    "predicted": "chainsaw",
+    "confidence": 0.8453,
+    "alert": true,
+    "inference_ms": 13.75,
+    "payload_bytes": 116,
+    "payload_ms": 20.001,
+    "priority": false,
+    "lora_source": "S1",
+    "lora_hops": 1,
+    "lora_delivered": true,
+    "lora_latency_ms": 215.6,
+    "gateway_topic": "priority/alerts",
+    "backhaul_ms": 120.0,
+    "end_to_end_ms": 369.4,
+    "decrypt_ok": true
+  },
+  {
+    "index": 5,
+    "true_class": "ambient",
+    "predicted": "ambient",
+    "confidence": 0.9461,
+    "alert": false,
+    "inference_ms": 14.36
+  },
+  {
+    "index": 6,
+    "true_class": "ambient",
+    "predicted": "gunshot",
+    "confidence": 0.5932,
+    "alert": false,
+    "inference_ms": 14.87
+  },
+  {
+    "index": 7,
+    "true_class": "ambient",
+    "predicted": "gunshot",
+    "confidence": 0.4875,
+    "alert": false,
+    "inference_ms": 13.99
+  },
+  {
+    "index": 8,
+    "true_class": "ambient",
+    "predicted": "ambient",
+    "confidence": 0.9316,
+    "alert": false,
+    "inference_ms": 14.9
+  },
+  {
+    "index": 9,
+    "true_class": "gunshot",
+    "predicted": "gunshot",
+    "confidence": 0.9164,
+    "alert": true,
+    "inference_ms": 14.74,
+    "payload_bytes": 116,
+    "payload_ms": 0.544,
+    "priority": true,
+    "lora_source": "S1",
+    "lora_hops": 1,
+    "lora_delivered": true,
+    "lora_latency_ms": 205.7,
+    "gateway_topic": "priority/alerts",
+    "backhaul_ms": 115.1,
+    "end_to_end_ms": 336.1,
+    "decrypt_ok": true
+  },
+  {
+    "index": 10,
+    "true_class": "vehicle",
+    "predicted": "vehicle",
+    "confidence": 0.9624,
+    "alert": false,
+    "inference_ms": 14.42
+  },
+  {
+    "index": 11,
+    "true_class": "gunshot",
+    "predicted": "gunshot",
+    "confidence": 0.8746,
+    "alert": false,
+    "inference_ms": 15.14
+  },
+  {
+    "index": 12,
+    "true_class": "vehicle",
+    "predicted": "vehicle",
+    "confidence": 0.9207,
+    "alert": false,
+    "inference_ms": 15.15
+  },
+  {
+    "index": 13,
+    "true_class": "chainsaw",
+    "predicted": "chainsaw",
+    "confidence": 0.9891,
+    "alert": true,
+    "inference_ms": 13.56,
+    "payload_bytes": 116,
+    "payload_ms": 0.299,
+    "priority": true,
+    "lora_source": "S2",
+    "lora_hops": 2,
+    "lora_delivered": true,
+    "lora_latency_ms": 416.9,
+    "gateway_topic": "priority/alerts",
+    "backhaul_ms": 111.8,
+    "end_to_end_ms": 542.6,
+    "decrypt_ok": true
+  },
+  {
+    "index": 14,
+    "true_class": "gunshot",
+    "predicted": "vehicle",
+    "confidence": 0.5095,
+    "alert": false,
+    "inference_ms": 13.34
+  },
+  {
+    "index": 15,
+    "true_class": "vehicle",
+    "predicted": "chainsaw",
+    "confidence": 0.6594,
+    "alert": false,
+    "inference_ms": 13.81
+  },
+  {
+    "index": 16,
+    "true_class": "gunshot",
+    "predicted": "chainsaw",
+    "confidence": 0.5907,
+    "alert": false,
+    "inference_ms": 13.5
+  },
+  {
+    "index": 17,
+    "true_class": "gunshot",
+    "predicted": "gunshot",
+    "confidence": 0.718,
+    "alert": false,
+    "inference_ms": 11.69
+  },
+  {
+    "index": 18,
+    "true_class": "chainsaw",
+    "predicted": "chainsaw",
+    "confidence": 0.9324,
+    "alert": true,
+    "inference_ms": 14.75,
+    "payload_bytes": 116,
+    "payload_ms": 0.313,
+    "priority": true,
+    "lora_source": "S3",
+    "lora_hops": 2,
+    "lora_delivered": true,
+    "lora_latency_ms": 436.9,
+    "gateway_topic": "priority/alerts",
+    "backhaul_ms": 302.7,
+    "end_to_end_ms": 754.6,
+    "decrypt_ok": true
+  },
+  {
+    "index": 19,
+    "true_class": "chainsaw",
+    "predicted": "chainsaw",
+    "confidence": 0.9867,
+    "alert": true,
+    "inference_ms": 12.24,
+    "payload_bytes": 116,
+    "payload_ms": 0.212,
+    "priority": true,
+    "lora_source": "S2",
+    "lora_hops": 2,
+    "lora_delivered": true,
+    "lora_latency_ms": 495.7,
+    "gateway_topic": "priority/alerts",
+    "backhaul_ms": 277.9,
+    "end_to_end_ms": 786.0,
+    "decrypt_ok": true
+  },
+  {
+    "index": 20,
+    "true_class": "vehicle",
+    "predicted": "vehicle",
+    "confidence": 0.985,
+    "alert": false,
+    "inference_ms": 15.22
+  },
+  {
+    "index": 21,
+    "true_class": "gunshot",
+    "predicted": "chainsaw",
+    "confidence": 0.721,
+    "alert": false,
+    "inference_ms": 14.9
+  },
+  {
+    "index": 22,
+    "true_class": "vehicle",
+    "predicted": "vehicle",
+    "confidence": 0.8497,
+    "alert": false,
+    "inference_ms": 15.3
+  },
+  {
+    "index": 23,
+    "true_class": "ambient",
+    "predicted": "gunshot",
+    "confidence": 0.553,
+    "alert": false,
+    "inference_ms": 15.27
+  }
+]

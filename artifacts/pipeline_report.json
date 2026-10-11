@@ -1,0 +1,1843 @@
+{
+  "preset": "quick",
+  "scenario": "corbett",
+  "seed": 42,
+  "seconds_total": 61.66267442703247,
+  "dataset": {
+    "dataset_path": "artifacts/prepared_dataset.h5",
+    "ambient_path": null,
+    "n_corpus": 120,
+    "n_train": 144,
+    "n_val": 24,
+    "n_test": 24,
+    "spike_gain": 1.5646209716796875,
+    "firing_rate": 0.22631875,
+    "latency_ms": {
+      "mel_mean": 30.80804586728239,
+      "mel_p95": 58.35064859566045,
+      "spike_mean": 24.330431416577387,
+      "spike_p95": 47.750708048988585
+    },
+    "qa": {
+      "mel": {
+        "shape_ok": true,
+        "no_nan": true,
+        "no_inf": true,
+        "db_range_ok": true,
+        "n_frames": 250,
+        "min_db": -80.0,
+        "max_db": 0.0,
+        "mean_db": -27.316659927368164,
+        "passed": true
+      },
+      "spikes_raw": {
+        "binary": true,
+        "firing_rate": 0.19956250488758087,
+        "firing_rate_in_range": true,
+        "active_neuron_fraction": 0.890625,
+        "shape": [
+          250,
+          64,
+          1
+        ],
+        "passed": true
+      },
+      "spikes_normalized": {
+        "has_nans": false,
+        "has_infs": false,
+        "in_range_0_1": true,
+        "global_firing_rate": 0.25,
+        "firing_rate_in_range": 1.0,
+        "neurons_have_variance": 1.0,
+        "passed": true
+      },
+      "train_augmented_firing_rate": 0.2956957465277778,
+      "class_balance": {
+        "train": {
+          "gunshot": 35.4,
+          "chainsaw": 25.0,
+          "vehicle": 25.7,
+          "ambient": 13.9,
+          "_n": 144
+        },
+        "val": {
+          "gunshot": 37.5,
+          "chainsaw": 25.0,
+          "vehicle": 25.0,
+          "ambient": 12.5,
+          "_n": 24
+        },
+        "test": {
+          "gunshot": 33.3,
+          "chainsaw": 20.8,
+          "vehicle": 25.0,
+          "ambient": 20.8,
+          "_n": 24
+        }
+      }
+    },
+    "seconds": 8.832375764846802
+  },
+  "training": {
+    "model_path": "artifacts/snn_model.npz",
+    "history": {
+      "epoch_losses": [
+        1.4083597638771446,
+        1.2891721633729603,
+        1.2023226539596503,
+        1.1220438102626735,
+        1.063466990022283,
+        1.010305421609287,
+        0.9680916591463268,
+        0.9317518820980651,
+        0.8867090557877426,
+        0.8509155726084064,
+        0.8174872634341297,
+        0.7947235657524097,
+        0.7591061064343766,
+        0.7443898799638502,
+        0.7011884259720625,
+        0.6859061289753365,
+        0.6551975866792754,
+        0.6321580007906111,
+        0.6114295617626025,
+        0.6026671443602406,
+        0.5723300999771479,
+        0.5506761937743312,
+        0.5352196185448326,
+        0.5257117991845721,
+        0.4979752485133301,
+        0.48279777929440143,
+        0.46246661169030084,
+        0.45753650628482784,
+        0.4403750682126179,
+        0.4221418286969039,
+        0.4113544553750304,
+        0.39930592977737756,
+        0.3791172077651915,
+        0.37093855872133713,
+        0.3625338748687009,
+        0.34798025219066325,
+        0.34048964026497547,
+        0.33088919161093794,
+        0.3225289812274176,
+        0.3133532944058825,
+        0.30649950416176014,
+        0.29859894542799925,
+        0.28871445123764494,
+        0.28050193014643776,
+        0.2735823017377349,
+        0.2651538772286305,
+        0.2598463062091068,
+        0.25265066357249844,
+        0.25027502899321946,
+        0.24158123482849525,
+        0.23654288022229494,
+        0.23226632671268727,
+        0.2296876570049131,
+        0.22266464348575946,
+        0.218354367095804,
+        0.21477645752420907,
+        0.2126580808263191,
+        0.2042265015215704,
+        0.20013711199447354,
+        0.1970490980389645
+      ],
+      "train_accuracies": [
+        0.3680555555555556,
+        0.5,
+        0.5347222222222222,
+        0.5694444444444444,
+        0.5833333333333334,
+        0.625,
+        0.7569444444444444,
+        0.7638888888888888,
+        0.7847222222222222,
+        0.7916666666666666,
+        0.8472222222222222,
+        0.8541666666666666,
+        0.8541666666666666,
+        0.8680555555555556,
+        0.8680555555555556,
+        0.8680555555555556,
+        0.875,
+        0.8819444444444444,
+        0.8888888888888888,
+        0.8680555555555556,
+        0.8819444444444444,
+        0.8888888888888888,
+        0.8888888888888888,
+        0.8819444444444444,
+        0.8888888888888888,
+        0.8819444444444444,
+        0.8958333333333334,
+        0.8888888888888888,
+        0.9305555555555556,
+        0.8888888888888888,
+        0.8958333333333334,
+        0.9097222222222222,
+        0.9305555555555556,
+        0.9375,
+        0.9236111111111112,
+        0.9375,
+        0.9513888888888888,
+        0.9513888888888888,
+        0.9513888888888888,
+        0.9513888888888888,
+        0.9513888888888888,
+        0.9513888888888888,
+        0.9513888888888888,
+        0.9513888888888888,
+        0.9652777777777778,
+        0.9652777777777778,
+        0.9652777777777778,
+        0.9652777777777778,
+        0.9583333333333334,
+        0.9652777777777778,
+        0.9652777777777778,
+        0.9652777777777778,
+        0.9652777777777778,
+        0.9652777777777778,
+        0.9652777777777778,
+        0.9652777777777778,
+        0.9791666666666666,
+        0.9791666666666666,
+        0.9791666666666666,
+        0.9652777777777778
+      ],
+      "val_losses": [
+        1.2291901606445172,
+        1.1756861229884537,
+        1.1007114596921794,
+        1.046759718218144,
+        1.0048471222246997,
+        0.9580973544534803,
+        0.9294301874311358,
+        0.8868117222131037,
+        0.8612483846365091,
+        0.8304939499852386,
+        0.8127192274220084,
+        0.7731344813982054,
+        0.7481276520351189,
+        0.7222296361926404,
+        0.6945715662577956,
+        0.6779106417629315,
+        0.6534981843580053,
+        0.6393137696172149,
+        0.6217448158239339,
+        0.6062877307893021,
+        0.5805096972983066,
+        0.5662919538996236,
+        0.5546606872395108,
+        0.5470415886263716,
+        0.5217801200579043,
+        0.5030236777990565,
+        0.49327057420704384,
+        0.4782622805615612,
+        0.46647038392004997,
+        0.4494782751772443,
+        0.45698142295247596,
+        0.440887236523191,
+        0.4263457463139729,
+        0.4237575296372211,
+        0.41247137070495477,
+        0.4093828852788394,
+        0.40204214495497775,
+        0.3915580256448281,
+        0.3900065970550893,
+        0.3790832404532721,
+        0.3721575926151135,
+        0.3640393027227233,
+        0.35731978764580336,
+        0.35304173342638795,
+        0.35003789016489,
+        0.34186811272681067,
+        0.33641816211938586,
+        0.3285284532635443,
+        0.3241870674517147,
+        0.31985833744093656,
+        0.3100266148710885,
+        0.30780942849357457,
+        0.2989825853342398,
+        0.2963537683021203,
+        0.2963425744510823,
+        0.28791842008361807,
+        0.2926154677044773,
+        0.2869250333192133,
+        0.28243987658358827,
+        0.2721178035789976
+      ],
+      "val_accuracies": [
+        0.5,
+        0.625,
+        0.7083333333333334,
+        0.75,
+        0.75,
+        0.8333333333333334,
+        0.7916666666666666,
+        0.8333333333333334,
+        0.75,
+        0.75,
+        0.7916666666666666,
+        0.75,
+        0.75,
+        0.7916666666666666,
+        0.8333333333333334,
+        0.7916666666666666,
+        0.7916666666666666,
+        0.7916666666666666,
+        0.7916666666666666,
+        0.8333333333333334,
+        0.7916666666666666,
+        0.7916666666666666,
+        0.7916666666666666,
+        0.8333333333333334,
+        0.7916666666666666,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.875,
+        0.7916666666666666,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.875,
+        0.8333333333333334,
+        0.875,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.875,
+        0.875,
+        0.875,
+        0.875,
+        0.875,
+        0.9166666666666666,
+        0.875,
+        0.875,
+        0.8333333333333334
+      ],
+      "best_val_loss": 0.2721178035789976,
+      "best_epoch": 59,
+      "epochs_run": 60,
+      "seconds": 44.158650159835815
+    },
+    "test": {
+      "accuracy": 0.6666666666666666,
+      "loss": 0.4868388923211822,
+      "n": 24,
+      "confusion": [
+        [
+          5,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          4,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          5,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          2
+        ]
+      ],
+      "per_class": {
+        "gunshot": {
+          "precision": 0.625,
+          "recall": 0.625,
+          "f1": 0.625,
+          "support": 8
+        },
+        "chainsaw": {
+          "precision": 0.5714,
+          "recall": 0.8,
+          "f1": 0.6667,
+          "support": 5
+        },
+        "vehicle": {
+          "precision": 0.7143,
+          "recall": 0.8333,
+          "f1": 0.7692,
+          "support": 6
+        },
+        "ambient": {
+          "precision": 1.0,
+          "recall": 0.4,
+          "f1": 0.5714,
+          "support": 5
+        }
+      }
+    },
+    "val_accuracy": 0.8333333333333334,
+    "meets_accuracy_target": false,
+    "n_parameters": 16836,
+    "seconds": 44.158650159835815
+  },
+  "alerts": {
+    "scenario": "Corbett National Park",
+    "samples_processed": 24,
+    "alerts_triggered": 5,
+    "alert_precision": 1.0,
+    "alerts_delivered": 5,
+    "delivery_rate": 1.0,
+    "payload_bytes_mean": 116.0,
+    "payload_bytes_max": 116,
+    "end_to_end_ms_mean": 557.7269083757785,
+    "end_to_end_ms_p95": 779.7109610086496,
+    "end_to_end_ms_max": 785.978015479295,
+    "meets_latency_target": true,
+    "ambient_clips": 5,
+    "ambient_false_alerts": 0,
+    "ambient_false_alert_rate": 0.0,
+    "ambient_ood_clips": 5,
+    "ambient_ood_false_alerts": 0,
+    "ambient_ood_false_alert_rate": 0.0,
+    "time_on_air_ms": {
+      "7": 194.8,
+      "8": 348.7,
+      "9": 615.4,
+      "10": 1148.9,
+      "11": 2461.7,
+      "12": 4595.7
+    },
+    "gateway": {
+      "priority": {
+        "count": 5,
+        "delivery_rate": 1.0,
+        "latency_mean_ms": 185.49215120257972,
+        "latency_p95_ms": 297.7353110265458,
+        "latency_p99_ms": 301.7122318988169,
+        "mean_attempts": 1.0
+      },
+      "normal": {
+        "count": 0,
+        "delivery_rate": 0.0
+      },
+      "priority_delivery_rate": 1.0,
+      "priority_latency_p95_ms": 297.7353110265458,
+      "priority_latency_p99_ms": 301.7122318988169,
+      "local_acks": 5,
+      "airtime_saved_transmissions": 10,
+      "duplicates_suppressed": 0,
+      "parse_failures": 0,
+      "queued": 0,
+      "counters": {
+        "priority": 5,
+        "normal": 0,
+        "delivered": 5,
+        "dropped": 0
+      },
+      "llq_max_credits": 3,
+      "llq_current_credits": 0.0,
+      "llq_baseline_rate_per_day": 5.0
+    }
+  },
+  "simulations": {
+    "energy": {
+      "corbett": {
+        "scenario": "Corbett National Park",
+        "scenario_key": "corbett",
+        "battery_capacity_wh": 18.5,
+        "average_power_mw": 50.043,
+        "energy_breakdown_mj_per_day": {
+          "quiescent": 4320000.0,
+          "audio": 28.8,
+          "spike_conversion": 2.16,
+          "snn_inference": 3456.0,
+          "encryption": 0.2,
+          "beacon_transmission": 36.019,
+          "payload_transmission": 246.4
+        },
+        "daily_consumption_wh": 1.201,
+        "daily_harvest_wh": 1.221,
+        "daily_net_wh": 0.02,
+        "energy_per_alert_mj": 73.535,
+        "energy_per_detection_mj": 24.215,
+        "operational_days_with_solar": 30,
+        "operational_days_battery_only": 16,
+        "final_soc_percent": 97.4,
+        "min_soc_percent": 95.7,
+        "survived_mission": true,
+        "power_reduction": {
+          "rows": {
+            "listening": {
+              "cnn_mw": 200.0,
+              "snn_mw": 50.0,
+              "reduction_x": 4.0
+            },
+            "audio_processing": {
+              "cnn_mw": 150.0,
+              "snn_mw": 2.0,
+              "reduction_x": 75.0
+            },
+            "inference": {
+              "cnn_mw": 250.0,
+              "snn_mw": 30.0,
+              "reduction_x": 8.3
+            }
+          },
+          "cnn_total_mw": 600.0,
+          "snn_active_mw": 33.0,
+          "snn_average_mw": 50.043,
+          "reduction_vs_cnn_active_x": 18.2,
+          "reduction_vs_cnn_average_x": 12.0
+        },
+        "recommendations": [
+          "Solar barely covers consumption -- add margin (larger panel or MPPT).",
+          "Battery-only endurance is 16 days; solar harvesting is mandatory for a 30-day deployment."
+        ],
+        "soc_trajectory_solar": [
+          98.4,
+          97.95,
+          98.39,
+          98.35,
+          98.39,
+          97.52,
+          95.68,
+          96.65,
+          98.12,
+          96.61,
+          98.08,
+          98.37,
+          98.41,
+          98.44,
+          98.43,
+          98.38,
+          98.39,
+          98.41,
+          97.4,
+          98.41,
+          98.39,
+          98.44,
+          98.43,
+          97.81,
+          97.87,
+          98.42,
+          98.41,
+          98.37,
+          98.37,
+          97.43
+        ],
+        "soc_trajectory_battery_only": [
+          93.51,
+          87.02,
+          80.52,
+          74.03,
+          67.54,
+          61.05,
+          54.56,
+          48.06,
+          41.57,
+          35.08,
+          28.59,
+          22.1,
+          15.6,
+          9.11,
+          2.62,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "daily_series": [
+          {
+            "day": 1,
+            "harvest_wh": 1.444,
+            "consumption_wh": 1.201,
+            "end_soc": 98.4
+          },
+          {
+            "day": 2,
+            "harvest_wh": 1.117,
+            "consumption_wh": 1.201,
+            "end_soc": 97.9
+          },
+          {
+            "day": 3,
+            "harvest_wh": 1.362,
+            "consumption_wh": 1.201,
+            "end_soc": 98.4
+          },
+          {
+            "day": 4,
+            "harvest_wh": 1.196,
+            "consumption_wh": 1.201,
+            "end_soc": 98.4
+          },
+          {
+            "day": 5,
+            "harvest_wh": 1.409,
+            "consumption_wh": 1.201,
+            "end_soc": 98.4
+          },
+          {
+            "day": 6,
+            "harvest_wh": 1.04,
+            "consumption_wh": 1.201,
+            "end_soc": 97.5
+          },
+          {
+            "day": 7,
+            "harvest_wh": 0.859,
+            "consumption_wh": 1.201,
+            "end_soc": 95.7
+          },
+          {
+            "day": 8,
+            "harvest_wh": 1.382,
+            "consumption_wh": 1.201,
+            "end_soc": 96.7
+          },
+          {
+            "day": 9,
+            "harvest_wh": 1.472,
+            "consumption_wh": 1.201,
+            "end_soc": 98.1
+          },
+          {
+            "day": 10,
+            "harvest_wh": 0.922,
+            "consumption_wh": 1.201,
+            "end_soc": 96.6
+          },
+          {
+            "day": 11,
+            "harvest_wh": 1.473,
+            "consumption_wh": 1.201,
+            "end_soc": 98.1
+          },
+          {
+            "day": 12,
+            "harvest_wh": 1.271,
+            "consumption_wh": 1.201,
+            "end_soc": 98.4
+          },
+          {
+            "day": 13,
+            "harvest_wh": 1.465,
+            "consumption_wh": 1.201,
+            "end_soc": 98.4
+          },
+          {
+            "day": 14,
+            "harvest_wh": 1.653,
+            "consumption_wh": 1.201,
+            "end_soc": 98.4
+          },
+          {
+            "day": 15,
+            "harvest_wh": 1.592,
+            "consumption_wh": 1.201,
+            "end_soc": 98.4
+          },
+          {
+            "day": 16,
+            "harvest_wh": 1.349,
+            "consumption_wh": 1.201,
+            "end_soc": 98.4
+          },
+          {
+            "day": 17,
+            "harvest_wh": 1.366,
+            "consumption_wh": 1.201,
+            "end_soc": 98.4
+          },
+          {
+            "day": 18,
+            "harvest_wh": 1.507,
+            "consumption_wh": 1.201,
+            "end_soc": 98.4
+          },
+          {
+            "day": 19,
+            "harvest_wh": 1.014,
+            "consumption_wh": 1.201,
+            "end_soc": 97.4
+          },
+          {
+            "day": 20,
+            "harvest_wh": 1.481,
+            "consumption_wh": 1.201,
+            "end_soc": 98.4
+          },
+          {
+            "day": 21,
+            "harvest_wh": 1.374,
+            "consumption_wh": 1.201,
+            "end_soc": 98.4
+          },
+          {
+            "day": 22,
+            "harvest_wh": 1.622,
+            "consumption_wh": 1.201,
+            "end_soc": 98.4
+          },
+          {
+            "day": 23,
+            "harvest_wh": 1.592,
+            "consumption_wh": 1.201,
+            "end_soc": 98.4
+          },
+          {
+            "day": 24,
+            "harvest_wh": 1.086,
+            "consumption_wh": 1.201,
+            "end_soc": 97.8
+          },
+          {
+            "day": 25,
+            "harvest_wh": 1.213,
+            "consumption_wh": 1.201,
+            "end_soc": 97.9
+          },
+          {
+            "day": 26,
+            "harvest_wh": 1.509,
+            "consumption_wh": 1.201,
+            "end_soc": 98.4
+          },
+          {
+            "day": 27,
+            "harvest_wh": 1.505,
+            "consumption_wh": 1.201,
+            "end_soc": 98.4
+          },
+          {
+            "day": 28,
+            "harvest_wh": 1.282,
+            "consumption_wh": 1.201,
+            "end_soc": 98.4
+          },
+          {
+            "day": 29,
+            "harvest_wh": 1.29,
+            "consumption_wh": 1.201,
+            "end_soc": 98.4
+          },
+          {
+            "day": 30,
+            "harvest_wh": 1.027,
+            "consumption_wh": 1.201,
+            "end_soc": 97.4
+          }
+        ]
+      },
+      "seshachalam": {
+        "scenario": "Seshachalam Hills",
+        "scenario_key": "seshachalam",
+        "battery_capacity_wh": 18.5,
+        "average_power_mw": 50.042,
+        "energy_breakdown_mj_per_day": {
+          "quiescent": 4320000.0,
+          "audio": 28.8,
+          "spike_conversion": 2.16,
+          "snn_inference": 3456.0,
+          "encryption": 0.12,
+          "beacon_transmission": 21.612,
+          "payload_transmission": 147.84
+        },
+        "daily_consumption_wh": 1.201,
+        "daily_harvest_wh": 1.099,
+        "daily_net_wh": -0.102,
+        "energy_per_alert_mj": 73.535,
+        "energy_per_detection_mj": 24.215,
+        "operational_days_with_solar": 30,
+        "operational_days_battery_only": 16,
+        "final_soc_percent": 86.9,
+        "min_soc_percent": 85.5,
+        "survived_mission": true,
+        "power_reduction": {
+          "rows": {
+            "listening": {
+              "cnn_mw": 200.0,
+              "snn_mw": 50.0,
+              "reduction_x": 4.0
+            },
+            "audio_processing": {
+              "cnn_mw": 150.0,
+              "snn_mw": 2.0,
+              "reduction_x": 75.0
+            },
+            "inference": {
+              "cnn_mw": 250.0,
+              "snn_mw": 30.0,
+              "reduction_x": 8.3
+            }
+          },
+          "cnn_total_mw": 600.0,
+          "snn_active_mw": 33.0,
+          "snn_average_mw": 50.043,
+          "reduction_vs_cnn_active_x": 18.2,
+          "reduction_vs_cnn_average_x": 12.0
+        },
+        "recommendations": [
+          "Daily deficit: add a second battery or a larger panel, or duty-cycle listening.",
+          "Battery-only endurance is 16 days; solar harvesting is mandatory for a 30-day deployment."
+        ],
+        "soc_trajectory_solar": [
+          98.37,
+          96.46,
+          96.74,
+          97.35,
+          96.63,
+          95.52,
+          96.69,
+          94.7,
+          95.94,
+          95.13,
+          95.04,
+          93.13,
+          92.83,
+          92.5,
+          91.58,
+          90.13,
+          90.69,
+          88.76,
+          88.9,
+          88.95,
+          87.29,
+          86.29,
+          85.71,
+          86.89,
+          87.84,
+          87.91,
+          86.56,
+          85.54,
+          86.39,
+          86.92
+        ],
+        "soc_trajectory_battery_only": [
+          93.51,
+          87.02,
+          80.52,
+          74.03,
+          67.54,
+          61.05,
+          54.56,
+          48.06,
+          41.57,
+          35.08,
+          28.59,
+          22.1,
+          15.61,
+          9.11,
+          2.62,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "daily_series": [
+          {
+            "day": 1,
+            "harvest_wh": 1.299,
+            "consumption_wh": 1.201,
+            "end_soc": 98.4
+          },
+          {
+            "day": 2,
+            "harvest_wh": 0.847,
+            "consumption_wh": 1.201,
+            "end_soc": 96.5
+          },
+          {
+            "day": 3,
+            "harvest_wh": 1.253,
+            "consumption_wh": 1.201,
+            "end_soc": 96.7
+          },
+          {
+            "day": 4,
+            "harvest_wh": 1.313,
+            "consumption_wh": 1.201,
+            "end_soc": 97.3
+          },
+          {
+            "day": 5,
+            "harvest_wh": 1.069,
+            "consumption_wh": 1.201,
+            "end_soc": 96.6
+          },
+          {
+            "day": 6,
+            "harvest_wh": 0.995,
+            "consumption_wh": 1.201,
+            "end_soc": 95.5
+          },
+          {
+            "day": 7,
+            "harvest_wh": 1.418,
+            "consumption_wh": 1.201,
+            "end_soc": 96.7
+          },
+          {
+            "day": 8,
+            "harvest_wh": 0.832,
+            "consumption_wh": 1.201,
+            "end_soc": 94.7
+          },
+          {
+            "day": 9,
+            "harvest_wh": 1.431,
+            "consumption_wh": 1.201,
+            "end_soc": 95.9
+          },
+          {
+            "day": 10,
+            "harvest_wh": 1.051,
+            "consumption_wh": 1.201,
+            "end_soc": 95.1
+          },
+          {
+            "day": 11,
+            "harvest_wh": 1.185,
+            "consumption_wh": 1.201,
+            "end_soc": 95.0
+          },
+          {
+            "day": 12,
+            "harvest_wh": 0.847,
+            "consumption_wh": 1.201,
+            "end_soc": 93.1
+          },
+          {
+            "day": 13,
+            "harvest_wh": 1.146,
+            "consumption_wh": 1.201,
+            "end_soc": 92.8
+          },
+          {
+            "day": 14,
+            "harvest_wh": 1.14,
+            "consumption_wh": 1.201,
+            "end_soc": 92.5
+          },
+          {
+            "day": 15,
+            "harvest_wh": 1.032,
+            "consumption_wh": 1.201,
+            "end_soc": 91.6
+          },
+          {
+            "day": 16,
+            "harvest_wh": 0.932,
+            "consumption_wh": 1.201,
+            "end_soc": 90.1
+          },
+          {
+            "day": 17,
+            "harvest_wh": 1.305,
+            "consumption_wh": 1.201,
+            "end_soc": 90.7
+          },
+          {
+            "day": 18,
+            "harvest_wh": 0.843,
+            "consumption_wh": 1.201,
+            "end_soc": 88.8
+          },
+          {
+            "day": 19,
+            "harvest_wh": 1.227,
+            "consumption_wh": 1.201,
+            "end_soc": 88.9
+          },
+          {
+            "day": 20,
+            "harvest_wh": 1.21,
+            "consumption_wh": 1.201,
+            "end_soc": 88.9
+          },
+          {
+            "day": 21,
+            "harvest_wh": 0.894,
+            "consumption_wh": 1.201,
+            "end_soc": 87.3
+          },
+          {
+            "day": 22,
+            "harvest_wh": 1.017,
+            "consumption_wh": 1.201,
+            "end_soc": 86.3
+          },
+          {
+            "day": 23,
+            "harvest_wh": 1.094,
+            "consumption_wh": 1.201,
+            "end_soc": 85.7
+          },
+          {
+            "day": 24,
+            "harvest_wh": 1.419,
+            "consumption_wh": 1.201,
+            "end_soc": 86.9
+          },
+          {
+            "day": 25,
+            "harvest_wh": 1.377,
+            "consumption_wh": 1.201,
+            "end_soc": 87.8
+          },
+          {
+            "day": 26,
+            "harvest_wh": 1.214,
+            "consumption_wh": 1.201,
+            "end_soc": 87.9
+          },
+          {
+            "day": 27,
+            "harvest_wh": 0.952,
+            "consumption_wh": 1.201,
+            "end_soc": 86.6
+          },
+          {
+            "day": 28,
+            "harvest_wh": 1.012,
+            "consumption_wh": 1.201,
+            "end_soc": 85.5
+          },
+          {
+            "day": 29,
+            "harvest_wh": 1.359,
+            "consumption_wh": 1.201,
+            "end_soc": 86.4
+          },
+          {
+            "day": 30,
+            "harvest_wh": 1.299,
+            "consumption_wh": 1.201,
+            "end_soc": 86.9
+          }
+        ]
+      },
+      "sundarbans": {
+        "scenario": "Sundarbans Wetlands",
+        "scenario_key": "sundarbans",
+        "battery_capacity_wh": 18.5,
+        "average_power_mw": 50.045,
+        "energy_breakdown_mj_per_day": {
+          "quiescent": 4320000.0,
+          "audio": 28.8,
+          "spike_conversion": 2.16,
+          "snn_inference": 3456.0,
+          "encryption": 0.32,
+          "beacon_transmission": 57.631,
+          "payload_transmission": 394.24
+        },
+        "daily_consumption_wh": 1.201,
+        "daily_harvest_wh": 0.915,
+        "daily_net_wh": -0.286,
+        "energy_per_alert_mj": 73.535,
+        "energy_per_detection_mj": 24.215,
+        "operational_days_with_solar": 30,
+        "operational_days_battery_only": 16,
+        "final_soc_percent": 56.7,
+        "min_soc_percent": 56.7,
+        "survived_mission": true,
+        "power_reduction": {
+          "rows": {
+            "listening": {
+              "cnn_mw": 200.0,
+              "snn_mw": 50.0,
+              "reduction_x": 4.0
+            },
+            "audio_processing": {
+              "cnn_mw": 150.0,
+              "snn_mw": 2.0,
+              "reduction_x": 75.0
+            },
+            "inference": {
+              "cnn_mw": 250.0,
+              "snn_mw": 30.0,
+              "reduction_x": 8.3
+            }
+          },
+          "cnn_total_mw": 600.0,
+          "snn_active_mw": 33.0,
+          "snn_average_mw": 50.043,
+          "reduction_vs_cnn_active_x": 18.2,
+          "reduction_vs_cnn_average_x": 12.0
+        },
+        "recommendations": [
+          "Daily deficit: add a second battery or a larger panel, or duty-cycle listening.",
+          "High false-positive rate inflates transmission energy -- raise the confidence threshold or add temporal debouncing.",
+          "Battery-only endurance is 16 days; solar harvesting is mandatory for a 30-day deployment."
+        ],
+        "soc_trajectory_solar": [
+          98.33,
+          95.57,
+          94.24,
+          93.15,
+          90.46,
+          89.72,
+          88.56,
+          85.76,
+          83.09,
+          83.04,
+          82.61,
+          82.61,
+          79.52,
+          79.23,
+          78.31,
+          77.4,
+          75.54,
+          74.11,
+          72.07,
+          71.71,
+          68.92,
+          68.38,
+          66.86,
+          64.58,
+          64.26,
+          61.38,
+          59.94,
+          59.26,
+          58.09,
+          56.75
+        ],
+        "soc_trajectory_battery_only": [
+          93.51,
+          87.02,
+          80.52,
+          74.03,
+          67.54,
+          61.05,
+          54.55,
+          48.06,
+          41.57,
+          35.08,
+          28.58,
+          22.09,
+          15.6,
+          9.11,
+          2.62,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "daily_series": [
+          {
+            "day": 1,
+            "harvest_wh": 1.083,
+            "consumption_wh": 1.201,
+            "end_soc": 98.3
+          },
+          {
+            "day": 2,
+            "harvest_wh": 0.691,
+            "consumption_wh": 1.201,
+            "end_soc": 95.6
+          },
+          {
+            "day": 3,
+            "harvest_wh": 0.955,
+            "consumption_wh": 1.201,
+            "end_soc": 94.2
+          },
+          {
+            "day": 4,
+            "harvest_wh": 1.0,
+            "consumption_wh": 1.201,
+            "end_soc": 93.2
+          },
+          {
+            "day": 5,
+            "harvest_wh": 0.703,
+            "consumption_wh": 1.201,
+            "end_soc": 90.5
+          },
+          {
+            "day": 6,
+            "harvest_wh": 1.063,
+            "consumption_wh": 1.201,
+            "end_soc": 89.7
+          },
+          {
+            "day": 7,
+            "harvest_wh": 0.986,
+            "consumption_wh": 1.201,
+            "end_soc": 88.6
+          },
+          {
+            "day": 8,
+            "harvest_wh": 0.683,
+            "consumption_wh": 1.201,
+            "end_soc": 85.8
+          },
+          {
+            "day": 9,
+            "harvest_wh": 0.708,
+            "consumption_wh": 1.201,
+            "end_soc": 83.1
+          },
+          {
+            "day": 10,
+            "harvest_wh": 1.193,
+            "consumption_wh": 1.201,
+            "end_soc": 83.0
+          },
+          {
+            "day": 11,
+            "harvest_wh": 1.12,
+            "consumption_wh": 1.201,
+            "end_soc": 82.6
+          },
+          {
+            "day": 12,
+            "harvest_wh": 1.201,
+            "consumption_wh": 1.201,
+            "end_soc": 82.6
+          },
+          {
+            "day": 13,
+            "harvest_wh": 0.631,
+            "consumption_wh": 1.201,
+            "end_soc": 79.5
+          },
+          {
+            "day": 14,
+            "harvest_wh": 1.147,
+            "consumption_wh": 1.201,
+            "end_soc": 79.2
+          },
+          {
+            "day": 15,
+            "harvest_wh": 1.031,
+            "consumption_wh": 1.201,
+            "end_soc": 78.3
+          },
+          {
+            "day": 16,
+            "harvest_wh": 1.034,
+            "consumption_wh": 1.201,
+            "end_soc": 77.4
+          },
+          {
+            "day": 17,
+            "harvest_wh": 0.856,
+            "consumption_wh": 1.201,
+            "end_soc": 75.5
+          },
+          {
+            "day": 18,
+            "harvest_wh": 0.938,
+            "consumption_wh": 1.201,
+            "end_soc": 74.1
+          },
+          {
+            "day": 19,
+            "harvest_wh": 0.822,
+            "consumption_wh": 1.201,
+            "end_soc": 72.1
+          },
+          {
+            "day": 20,
+            "harvest_wh": 1.135,
+            "consumption_wh": 1.201,
+            "end_soc": 71.7
+          },
+          {
+            "day": 21,
+            "harvest_wh": 0.684,
+            "consumption_wh": 1.201,
+            "end_soc": 68.9
+          },
+          {
+            "day": 22,
+            "harvest_wh": 1.101,
+            "consumption_wh": 1.201,
+            "end_soc": 68.4
+          },
+          {
+            "day": 23,
+            "harvest_wh": 0.921,
+            "consumption_wh": 1.201,
+            "end_soc": 66.9
+          },
+          {
+            "day": 24,
+            "harvest_wh": 0.779,
+            "consumption_wh": 1.201,
+            "end_soc": 64.6
+          },
+          {
+            "day": 25,
+            "harvest_wh": 1.142,
+            "consumption_wh": 1.201,
+            "end_soc": 64.3
+          },
+          {
+            "day": 26,
+            "harvest_wh": 0.668,
+            "consumption_wh": 1.201,
+            "end_soc": 61.4
+          },
+          {
+            "day": 27,
+            "harvest_wh": 0.936,
+            "consumption_wh": 1.201,
+            "end_soc": 59.9
+          },
+          {
+            "day": 28,
+            "harvest_wh": 1.074,
+            "consumption_wh": 1.201,
+            "end_soc": 59.3
+          },
+          {
+            "day": 29,
+            "harvest_wh": 0.985,
+            "consumption_wh": 1.201,
+            "end_soc": 58.1
+          },
+          {
+            "day": 30,
+            "harvest_wh": 0.953,
+            "consumption_wh": 1.201,
+            "end_soc": 56.7
+          }
+        ]
+      }
+    },
+    "network": {
+      "corbett": {
+        "scenario": "corbett",
+        "topology": {
+          "scenario": "corbett",
+          "n_nodes": 6,
+          "n_sensors": 3,
+          "n_relays": 2,
+          "n_links": 7,
+          "mean_link_km": 3.337,
+          "max_link_km": 4.125
+        },
+        "connectivity": {
+          "connected": true,
+          "orphaned_sensors": [],
+          "routes": {
+            "S1": {
+              "path": [
+                "S1",
+                "BASE"
+              ],
+              "hops": 1,
+              "distance_km": 1.11
+            },
+            "S2": {
+              "path": [
+                "S2",
+                "R1",
+                "BASE"
+              ],
+              "hops": 2,
+              "distance_km": 8.25
+            },
+            "S3": {
+              "path": [
+                "S3",
+                "R2",
+                "BASE"
+              ],
+              "hops": 2,
+              "distance_km": 6.58
+            }
+          },
+          "max_hops": 2
+        },
+        "adaptive_sf_baseline": {
+          "scenario": "corbett",
+          "messages": 100,
+          "delivered": 100,
+          "delivery_rate": 1.0,
+          "latency_mean_ms": 404.32272474318,
+          "latency_std_ms": 125.53618396527331,
+          "latency_p50_ms": 475.33740398068323,
+          "latency_p95_ms": 541.9010518415045,
+          "latency_p99_ms": 579.3149833294157,
+          "latency_max_ms": 599.926994666317,
+          "avg_hop_count": 1.62,
+          "total_retries": 0,
+          "packet_loss": 0.0,
+          "failures": [],
+          "meets_delivery_target": true,
+          "meets_latency_target": true
+        },
+        "fixed_sf_baseline": {
+          "scenario": "corbett",
+          "messages": 100,
+          "delivered": 100,
+          "delivery_rate": 1.0,
+          "latency_mean_ms": 8545.769277525606,
+          "latency_std_ms": 2400.944916677329,
+          "latency_p50_ms": 10216.147303829139,
+          "latency_p95_ms": 10260.80592490304,
+          "latency_p99_ms": 10286.398406946913,
+          "latency_max_ms": 10300.019496871248,
+          "avg_hop_count": 1.67,
+          "total_retries": 0,
+          "packet_loss": 0.0,
+          "failures": [],
+          "meets_delivery_target": true,
+          "meets_latency_target": false
+        },
+        "fixed_spreading_factor": 12,
+        "congestion": {
+          "scenario": "corbett",
+          "messages": 100,
+          "delivered": 100,
+          "delivery_rate": 1.0,
+          "latency_mean_ms": 556.6349576419019,
+          "latency_std_ms": 199.08553767476383,
+          "latency_p50_ms": 572.3306057332459,
+          "latency_p95_ms": 844.7040428962836,
+          "latency_p99_ms": 1030.641068082439,
+          "latency_max_ms": 1035.1415862909425,
+          "avg_hop_count": 1.67,
+          "total_retries": 0,
+          "packet_loss": 0.0,
+          "failures": [],
+          "meets_delivery_target": true,
+          "meets_latency_target": true
+        },
+        "interference": {
+          "scenario": "corbett",
+          "messages": 100,
+          "delivered": 100,
+          "delivery_rate": 1.0,
+          "latency_mean_ms": 416.5769157817298,
+          "latency_std_ms": 116.26487718430639,
+          "latency_p50_ms": 479.7348820248253,
+          "latency_p95_ms": 529.068408822368,
+          "latency_p99_ms": 546.606052769343,
+          "latency_max_ms": 555.5767923449733,
+          "avg_hop_count": 1.68,
+          "total_retries": 0,
+          "packet_loss": 0.0,
+          "failures": [],
+          "meets_delivery_target": true,
+          "meets_latency_target": true
+        },
+        "time_on_air_ms": {
+          "7": 220.4,
+          "8": 389.6,
+          "9": 697.3,
+          "10": 1271.8,
+          "11": 2789.4,
+          "12": 5087.2
+        },
+        "recommendations": [
+          "All targets met; deploy the documented topology as-is."
+        ]
+      },
+      "seshachalam": {
+        "scenario": "seshachalam",
+        "topology": {
+          "scenario": "seshachalam",
+          "n_nodes": 4,
+          "n_sensors": 2,
+          "n_relays": 1,
+          "n_links": 6,
+          "mean_link_km": 4.139,
+          "max_link_km": 7.76
+        },
+        "connectivity": {
+          "connected": true,
+          "orphaned_sensors": [],
+          "routes": {
+            "S1": {
+              "path": [
+                "S1",
+                "BASE"
+              ],
+              "hops": 1,
+              "distance_km": 4.66
+            },
+            "S2": {
+              "path": [
+                "S2",
+                "BASE"
+              ],
+              "hops": 1,
+              "distance_km": 3.1
+            }
+          },
+          "max_hops": 1
+        },
+        "adaptive_sf_baseline": {
+          "scenario": "seshachalam",
+          "messages": 100,
+          "delivered": 100,
+          "delivery_rate": 1.0,
+          "latency_mean_ms": 251.1378812108497,
+          "latency_std_ms": 19.71534784971687,
+          "latency_p50_ms": 247.8659528797092,
+          "latency_p95_ms": 281.80098433614137,
+          "latency_p99_ms": 336.6380076883836,
+          "latency_max_ms": 339.04780896042934,
+          "avg_hop_count": 1.0,
+          "total_retries": 0,
+          "packet_loss": 0.0,
+          "failures": [],
+          "meets_delivery_target": true,
+          "meets_latency_target": true
+        },
+        "fixed_sf_baseline": {
+          "scenario": "seshachalam",
+          "messages": 100,
+          "delivered": 100,
+          "delivery_rate": 1.0,
+          "latency_mean_ms": 730.4108499598319,
+          "latency_std_ms": 20.168461602398036,
+          "latency_p50_ms": 725.8825117940987,
+          "latency_p95_ms": 773.6874508772555,
+          "latency_p99_ms": 785.5095791937546,
+          "latency_max_ms": 793.9948817454181,
+          "avg_hop_count": 1.0,
+          "total_retries": 0,
+          "packet_loss": 0.0,
+          "failures": [],
+          "meets_delivery_target": true,
+          "meets_latency_target": true
+        },
+        "fixed_spreading_factor": 9,
+        "congestion": {
+          "scenario": "seshachalam",
+          "messages": 100,
+          "delivered": 100,
+          "delivery_rate": 1.0,
+          "latency_mean_ms": 324.09892923323923,
+          "latency_std_ms": 79.80328862369676,
+          "latency_p50_ms": 294.50205763897384,
+          "latency_p95_ms": 474.35471941160324,
+          "latency_p99_ms": 529.9347590438792,
+          "latency_max_ms": 570.9588026491223,
+          "avg_hop_count": 1.0,
+          "total_retries": 0,
+          "packet_loss": 0.0,
+          "failures": [],
+          "meets_delivery_target": true,
+          "meets_latency_target": true
+        },
+        "interference": {
+          "scenario": "seshachalam",
+          "messages": 100,
+          "delivered": 100,
+          "delivery_rate": 1.0,
+          "latency_mean_ms": 248.2940363704455,
+          "latency_std_ms": 15.925697311722034,
+          "latency_p50_ms": 243.7194358258899,
+          "latency_p95_ms": 282.8938429612204,
+          "latency_p99_ms": 293.9300654237226,
+          "latency_max_ms": 295.521739145384,
+          "avg_hop_count": 1.0,
+          "total_retries": 0,
+          "packet_loss": 0.0,
+          "failures": [],
+          "meets_delivery_target": true,
+          "meets_latency_target": true
+        },
+        "time_on_air_ms": {
+          "7": 220.4,
+          "8": 389.6,
+          "9": 697.3,
+          "10": 1271.8,
+          "11": 2789.4,
+          "12": 5087.2
+        },
+        "recommendations": [
+          "All targets met; deploy the documented topology as-is."
+        ]
+      },
+      "sundarbans": {
+        "scenario": "sundarbans",
+        "topology": {
+          "scenario": "sundarbans",
+          "n_nodes": 8,
+          "n_sensors": 4,
+          "n_relays": 3,
+          "n_links": 11,
+          "mean_link_km": 3.979,
+          "max_link_km": 5.278
+        },
+        "connectivity": {
+          "connected": true,
+          "orphaned_sensors": [],
+          "routes": {
+            "S1": {
+              "path": [
+                "S1",
+                "BASE"
+              ],
+              "hops": 1,
+              "distance_km": 0.76
+            },
+            "S2": {
+              "path": [
+                "S2",
+                "R1",
+                "BASE"
+              ],
+              "hops": 2,
+              "distance_km": 6.83
+            },
+            "S3": {
+              "path": [
+                "S3",
+                "R2",
+                "BASE"
+              ],
+              "hops": 2,
+              "distance_km": 8.34
+            },
+            "S4": {
+              "path": [
+                "S4",
+                "R3",
+                "BASE"
+              ],
+              "hops": 2,
+              "distance_km": 10.21
+            }
+          },
+          "max_hops": 2
+        },
+        "adaptive_sf_baseline": {
+          "scenario": "sundarbans",
+          "messages": 100,
+          "delivered": 100,
+          "delivery_rate": 1.0,
+          "latency_mean_ms": 440.8224679034596,
+          "latency_std_ms": 107.99846650272815,
+          "latency_p50_ms": 487.39736435449845,
+          "latency_p95_ms": 541.9376330008193,
+          "latency_p99_ms": 547.9459215876789,
+          "latency_max_ms": 579.1067764514322,
+          "avg_hop_count": 1.77,
+          "total_retries": 0,
+          "packet_loss": 0.0,
+          "failures": [],
+          "meets_delivery_target": true,
+          "meets_latency_target": true
+        },
+        "fixed_sf_baseline": {
+          "scenario": "sundarbans",
+          "messages": 100,
+          "delivered": 100,
+          "delivery_rate": 1.0,
+          "latency_mean_ms": 2291.2486065393664,
+          "latency_std_ms": 558.2081300869779,
+          "latency_p50_ms": 2591.0117711627163,
+          "latency_p95_ms": 2649.1513080850323,
+          "latency_p99_ms": 2682.002552886606,
+          "latency_max_ms": 2711.8310188475143,
+          "avg_hop_count": 1.76,
+          "total_retries": 0,
+          "packet_loss": 0.0,
+          "failures": [],
+          "meets_delivery_target": true,
+          "meets_latency_target": false
+        },
+        "fixed_spreading_factor": 10,
+        "congestion": {
+          "scenario": "sundarbans",
+          "messages": 100,
+          "delivered": 100,
+          "delivery_rate": 1.0,
+          "latency_mean_ms": 556.7705068035758,
+          "latency_std_ms": 180.93730503151718,
+          "latency_p50_ms": 582.0864413236473,
+          "latency_p95_ms": 831.9193051983063,
+          "latency_p99_ms": 933.572488557353,
+          "latency_max_ms": 980.9313457942567,
+          "avg_hop_count": 1.7,
+          "total_retries": 0,
+          "packet_loss": 0.0,
+          "failures": [],
+          "meets_delivery_target": true,
+          "meets_latency_target": true
+        },
+        "interference": {
+          "scenario": "sundarbans",
+          "messages": 100,
+          "delivered": 100,
+          "delivery_rate": 1.0,
+          "latency_mean_ms": 427.4455264019696,
+          "latency_std_ms": 110.77978860527055,
+          "latency_p50_ms": 482.24571035133613,
+          "latency_p95_ms": 529.0684049210076,
+          "latency_p99_ms": 550.2702595525949,
+          "latency_max_ms": 555.5767926619525,
+          "avg_hop_count": 1.72,
+          "total_retries": 0,
+          "packet_loss": 0.0,
+          "failures": [],
+          "meets_delivery_target": true,
+          "meets_latency_target": true
+        },
+        "time_on_air_ms": {
+          "7": 220.4,
+          "8": 389.6,
+          "9": 697.3,
+          "10": 1271.8,
+          "11": 2789.4,
+          "12": 5087.2
+        },
+        "recommendations": [
+          "All targets met; deploy the documented topology as-is."
+        ]
+      }
+    },
+    "energy_plot": "artifacts/energy_profiles.png"
+  },
+  "delivery": {
+    "scenario": "corbett",
+    "messages_sent": 300,
+    "priority_dispatched": 96,
+    "officer_acked": 91,
+    "officer_ack_rate": 0.9479166666666666,
+    "officer_ack_latency_p95_s": 4176.43681878683,
+    "escalations_triggered": 16,
+    "unacknowledged": 0,
+    "gateway_metrics": {
+      "priority": {
+        "count": 96,
+        "delivery_rate": 1.0,
+        "latency_mean_ms": 296.44871778800194,
+        "latency_p95_ms": 367.5135230246524,
+        "latency_p99_ms": 377.82567698221663,
+        "mean_attempts": 1.0
+      },
+      "normal": {
+        "count": 204,
+        "delivery_rate": 0.9705882352941176,
+        "latency_mean_ms": 449.9599148429437,
+        "latency_p95_ms": 806.5821621268457,
+        "latency_p99_ms": 940.7236735587146,
+        "mean_attempts": 1.0
+      },
+      "priority_delivery_rate": 1.0,
+      "priority_latency_p95_ms": 367.5135230246524,
+      "priority_latency_p99_ms": 377.82567698221663,
+      "local_acks": 96,
+      "airtime_saved_transmissions": 192,
+      "duplicates_suppressed": 0,
+      "parse_failures": 0,
+      "queued": 6,
+      "counters": {
+        "priority": 96,
+        "normal": 204,
+        "delivered": 294,
+        "dropped": 6
+      },
+      "llq_max_credits": 3,
+      "llq_current_credits": 0.16,
+      "llq_baseline_rate_per_day": 5.0
+    }
+  },
+  "acceptance": {
+    "snn_test_accuracy": {
+      "actual": "66.7%",
+      "target": ">85%",
+      "passed": false
+    },
+    "spike_firing_rate": {
+      "actual": "25.0% normalized (22.6% raw from ARCH_2)",
+      "target": "25% +/- 5%",
+      "passed": true,
+      "note": "The rate that reaches ARCH_4 is the ARCH_3-normalised one; the raw ARCH_2 rate varies per clip and per forest, which is what forest normalisation exists to remove."
+    },
+    "alert_payload_size": {
+      "actual": "116 B",
+      "target": "<1000 B",
+      "passed": true
+    },
+    "end_to_end_latency_p95": {
+      "actual": "780 ms",
+      "target": "<1500 ms",
+      "passed": true
+    },
+    "ambient_false_alert_rate": {
+      "actual": "0.0%",
+      "target": "<10%",
+      "passed": true
+    },
+    "network_delivery_rate": {
+      "actual": "100.0% (worst forest)",
+      "target": ">95%",
+      "passed": true
+    },
+    "network_latency_p99": {
+      "actual": "579 ms (worst forest)",
+      "target": "<1500 ms",
+      "passed": true
+    },
+    "power_reduction": {
+      "actual": "12x system avg / 18x compute path",
+      "target": "50-75x",
+      "passed": false,
+      "note": "Unreachable by construction: the 50-75x headline in SUMMARY_HIGH_LEVEL_ARCHITECTURE assumes 0.5 mW quiescent power, which ARCH_7's own 'CRITICAL CORRECTIONS' table supersedes with 50 mW. At 50 mW quiescent the ceiling is 600/(50+3) ~ 11x -- ARCH_7's own corrected formula. The SNN compute path itself still beats the CNN by ~18x."
+    },
+    "operational_endurance": {
+      "actual": "30 days (worst forest)",
+      "target": ">=30 days",
+      "passed": true
+    }
+  }
+}
