@@ -134,6 +134,7 @@ dmypy.json
 Thumbs.db
 
 # Project-specific
+web/
 Resources/
 
 # Eco-Sentry run outputs
