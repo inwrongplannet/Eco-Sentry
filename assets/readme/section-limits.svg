@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200" height="100" viewBox="0 0 1200 100"
+     role="img" aria-labelledby="title desc">
+  <title id="title">Known limitations</title>
+  <desc id="desc">Current constraints and future work items</desc>
+
+  <rect width="1200" height="100" fill="#0D1117"/>
+  <rect x="0" y="0" width="4" height="100" fill="#F0883E"/>
+
+  <g transform="translate(32 28)">
+    <text x="0" y="24" font-family="ui-monospace, SFMono-Regular, Menlo, monospace"
+          font-size="12" fill="#F0883E" letter-spacing="2">04</text>
+    <text x="0" y="56" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif"
+          font-size="28" font-weight="700" fill="#F0F6FC">Known limitations</text>
+  </g>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200" height="100" viewBox="0 0 1200 100"
+     role="img" aria-labelledby="title desc">
+  <title id="title">Quick start</title>
+  <desc id="desc">Installation and first run instructions</desc>
+
+  <rect width="1200" height="100" fill="#0D1117"/>
+  <rect x="0" y="0" width="4" height="100" fill="#3FB990"/>
+
+  <g transform="translate(32 28)">
+    <text x="0" y="24" font-family="ui-monospace, SFMono-Regular, Menlo, monospace"
+          font-size="12" fill="#3FB950" letter-spacing="2">$</text>
+    <text x="0" y="56" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif"
+          font-size="28" font-weight="700" fill="#F0F6FC">Quick start</text>
+  </g>
+</svg>
