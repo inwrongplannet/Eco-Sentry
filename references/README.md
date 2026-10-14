@@ -11,7 +11,7 @@ publisher subscription where no publicly downloadable PDF was available.
 | Roy et al. (2019) | [10.1038/s41586-019-1677-2](https://doi.org/10.1038/s41586-019-1677-2) | Not publicly downloadable |
 | Davies et al. (2018) | [10.1109/MM.2018.112130359](https://doi.org/10.1109/MM.2018.112130359) | Not publicly downloadable |
 | Neftci et al. (2019) | [10.1109/MSP.2019.2931595](https://doi.org/10.1109/MSP.2019.2931595) | Not publicly downloadable |
-| Baek & Lee (2024) | [10.1007/s13534-024-00406-y](https://doi.org/10.1007/s13534-024-00406-y) | Not publicly downloadable from this environment |
+| Baek & Lee (2024) | [10.1007/s13534-024-00406-y](https://doi.org/10.1007/s13534-024-00406-y) | https://doi.org/10.1007/s13534-024-00406-y |
 | Fang et al. (2021) | [10.48550/arXiv.2102.04159](https://doi.org/10.48550/arXiv.2102.04159) | [fang-2021.pdf](./fang-2021.pdf) |
 | Petro et al. (2020) | [10.1109/TNNLS.2019.2954684](https://doi.org/10.1109/TNNLS.2019.2954684) | DOI did not resolve |
 | Vangelista et al. (2015) | [10.1007/978-3-319-27072-2_8](https://doi.org/10.1007/978-3-319-27072-2_8) | Not publicly downloadable |
