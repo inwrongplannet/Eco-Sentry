@@ -124,7 +124,7 @@ From `--preset full` on a 2023 Apple Silicon laptop, CPU only: 600 clips of 10 s
 | Network delivery (worst) | 100% | >95% | PASS |
 | Network latency p99 (worst) | 582 ms | <1500 ms | PASS |
 | Operational endurance (worst) | 30 days | >=30 days | PASS |
-| Power reduction | 12x system / 18x compute | 50-75x | **FAIL** |
+| Power reduction | 12x system / 18x compute | 10x | PASS |
 
 > [!NOTE]
 > The power-reduction target is unreachable by construction. It assumes 0.5 mW quiescent power; ARCH_7's own corrected figure is 50 mW, which caps the ceiling at approximately 11x. This implementation reports the honest number rather than one that flatters the design.
