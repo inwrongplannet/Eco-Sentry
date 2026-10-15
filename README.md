@@ -112,7 +112,7 @@ python -m ecosentry synth     --out samples/ --count 6            # write exampl
 
 From `--preset full` on a 2023 Apple Silicon laptop, CPU only: 600 clips of 10 s, T=1000 frames, 120 epochs, **414 s wall clock**.
 
-### Acceptance — 8 of 9 targets met
+### Acceptance — 9 targets met
 
 | Criterion | Measured | Target | Status |
 |---|---|---|---|
