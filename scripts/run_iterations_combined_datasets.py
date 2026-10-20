@@ -33,12 +33,14 @@ from ecosentry.config import DatasetConfig, EcoSentryConfig
 from ecosentry.pipeline import PipelinePreset, build_spike_dataset, run_training_stage
 from ecosentry.synth import build_corpus
 from esc50_loader import load_esc50_corpus
+from fsc22_loader import load_fsc22_corpus
 from urbansound8k_loader import load_urbansound8k_corpus
 
 
 def run_one_seed(seed: int, esc50_root: Path, us8k_root: Path, epochs: int,
                   n_synthetic: int, max_per_us8k_category: int, n_frames: int,
-                  out_dir: Path) -> dict:
+                  out_dir: Path, fsc22_root: Path | None = None,
+                  max_per_fsc22_category: int | None = None) -> dict:
     base_cfg = EcoSentryConfig()
     dataset_cfg = DatasetConfig()
 
@@ -48,7 +50,13 @@ def run_one_seed(seed: int, esc50_root: Path, us8k_root: Path, epochs: int,
     us8k_samples, us8k_counts, us8k_skipped = load_urbansound8k_corpus(
         us8k_root, max_per_category=max_per_us8k_category
     )
-    combined = list(synthetic) + list(esc50_samples) + list(us8k_samples)
+    if fsc22_root is not None:
+        fsc22_samples, fsc22_counts, fsc22_skipped = load_fsc22_corpus(
+            fsc22_root, max_per_category=max_per_fsc22_category
+        )
+    else:
+        fsc22_samples, fsc22_counts, fsc22_skipped = [], {}, []
+    combined = list(synthetic) + list(esc50_samples) + list(us8k_samples) + list(fsc22_samples)
 
     encoded = build_spike_dataset(combined, base_cfg.audio, base_cfg.spikes, n_frames=n_frames,
                                    target_rate=dataset_cfg.target_firing_rate, verbose=False)
@@ -84,6 +92,8 @@ def run_one_seed(seed: int, esc50_root: Path, us8k_root: Path, epochs: int,
         "n_esc50": len(esc50_samples),
         "n_us8k": len(us8k_samples),
         "n_us8k_skipped": len(us8k_skipped),
+        "n_fsc22": len(fsc22_samples),
+        "n_fsc22_skipped": len(fsc22_skipped),
         "test_accuracy_combined": stage2["test"]["accuracy"],
         "test_accuracy_real_only": real_result["accuracy"] if real_result else None,
         "n_real_in_test": n_real,
@@ -103,10 +113,12 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--esc50-root", type=Path, required=True)
     parser.add_argument("--us8k-root", type=Path, required=True)
+    parser.add_argument("--fsc22-root", type=Path, default=None)
     parser.add_argument("--seeds", type=int, nargs="+", default=[42, 43, 44, 45, 46])
     parser.add_argument("--epochs", type=int, default=60)
     parser.add_argument("--n-synthetic", type=int, default=600)
     parser.add_argument("--max-per-us8k-category", type=int, default=60)
+    parser.add_argument("--max-per-fsc22-category", type=int, default=None)
     parser.add_argument("--n-frames", type=int, default=1000)
     parser.add_argument("--out-dir", type=Path, default=Path("artifacts/real_audio_validation/iterations"))
     args = parser.parse_args()
@@ -131,7 +143,8 @@ def main() -> None:
         print(f"=== seed {seed} ({len(all_results) + 1}/{len(args.seeds)}) ===")
         result = run_one_seed(seed, args.esc50_root, args.us8k_root, args.epochs,
                                args.n_synthetic, args.max_per_us8k_category, args.n_frames,
-                               args.out_dir)
+                               args.out_dir, fsc22_root=args.fsc22_root,
+                               max_per_fsc22_category=args.max_per_fsc22_category)
         all_results.append(result)
         print(f"  test_accuracy_real_only: {result['test_accuracy_real_only']}")
         real_accs = [r["test_accuracy_real_only"] for r in all_results if r["test_accuracy_real_only"] is not None]

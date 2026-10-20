@@ -1,66 +1,68 @@
 {
   "seed": 43,
-  "n_synthetic": 600,
+  "n_synthetic": 1200,
   "n_esc50": 480,
-  "n_us8k": 360,
+  "n_us8k": 2374,
   "n_us8k_skipped": 0,
-  "test_accuracy_combined": 0.7534722222222222,
-  "test_accuracy_real_only": 0.6834862385321101,
-  "n_real_in_test": 218,
-  "val_accuracy": 0.7317073170731707,
+  "n_fsc22": 0,
+  "n_fsc22_skipped": 0,
+  "test_accuracy_combined": 0.7916152897657214,
+  "test_accuracy_real_only": 0.7734724292101341,
+  "n_real_in_test": 671,
+  "val_accuracy": 0.8224414303329223,
   "test_confusion_matrix_real_only": [
     [
-      27,
+      94,
       0,
-      4,
-      9
+      33,
+      2
     ],
     [
-      0,
+      1,
       13,
-      2,
-      4
+      5,
+      7
     ],
     [
-      6,
+      15,
       4,
-      58,
-      18
+      251,
+      34
     ],
     [
       7,
-      1,
-      14,
-      51
+      0,
+      44,
+      161
     ]
   ],
   "test_per_class_real_only": {
     "gunshot": {
-      "precision": 0.675,
-      "recall": 0.675,
-      "f1": 0.675,
-      "support": 40
+      "precision": 0.8034,
+      "recall": 0.7287,
+      "f1": 0.7642,
+      "support": 129
     },
     "chainsaw": {
-      "precision": 0.7222,
-      "recall": 0.6842,
-      "f1": 0.7027,
-      "support": 19
+      "precision": 0.7647,
+      "recall": 0.5,
+      "f1": 0.6047,
+      "support": 26
     },
     "vehicle": {
-      "precision": 0.7436,
-      "recall": 0.6744,
-      "f1": 0.7073,
-      "support": 86
+      "precision": 0.7538,
+      "recall": 0.8257,
+      "f1": 0.7881,
+      "support": 304
     },
     "ambient": {
-      "precision": 0.622,
-      "recall": 0.6986,
-      "f1": 0.6581,
-      "support": 73
+      "precision": 0.7892,
+      "recall": 0.7594,
+      "f1": 0.774,
+      "support": 212
     }
   },
-  "gunshot_real_recall": 0.675,
-  "gunshot_real_precision": 0.675,
-  "gunshot_real_support": 40
+  "gunshot_real_recall": 0.7287,
+  "gunshot_real_precision": 0.8034,
+  "gunshot_real_support": 129
 }

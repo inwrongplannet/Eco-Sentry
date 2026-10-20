@@ -6,19 +6,19 @@
     "car_horn": 429,
     "air_conditioner": 1000,
     "street_music": 1000,
-    "gun_shot": 374,
     "siren": 929,
-    "engine_idling": 1000
+    "engine_idling": 1000,
+    "gun_shot": 374
   },
   "n_skipped": 0,
   "note_on_chainsaw": "UrbanSound8K has no chainsaw category. chainsaw is not evaluated here.",
-  "argmax_accuracy": 0.07924767540152156,
+  "argmax_accuracy": 0.07840236686390532,
   "argmax_confusion_matrix": [
     [
       0,
-      326,
+      327,
       23,
-      25
+      24
     ],
     [
       0,
@@ -27,16 +27,16 @@
       0
     ],
     [
-      196,
-      1815,
-      309,
-      38
+      181,
+      1832,
+      306,
+      39
     ],
     [
-      232,
-      1562,
+      229,
+      1566,
       140,
-      66
+      65
     ]
   ],
   "argmax_per_class": {
@@ -53,33 +53,33 @@
       "support": 0
     },
     "vehicle": {
-      "precision": 0.6547,
-      "recall": 0.131,
-      "f1": 0.2184,
+      "precision": 0.6525,
+      "recall": 0.1298,
+      "f1": 0.2165,
       "support": 2358
     },
     "ambient": {
-      "precision": 0.5116,
-      "recall": 0.033,
-      "f1": 0.062,
+      "precision": 0.5078,
+      "recall": 0.0325,
+      "f1": 0.0611,
       "support": 2000
     }
   },
   "alert_decision_by_true_class": {
     "vehicle": {
       "n": 2358,
-      "alerts": 916,
-      "alert_rate": 0.3884648006785411
+      "alerts": 919,
+      "alert_rate": 0.3897370653095844
     },
     "ambient": {
       "n": 2000,
-      "alerts": 864,
-      "alert_rate": 0.432
+      "alerts": 870,
+      "alert_rate": 0.435
     },
     "gunshot": {
       "n": 374,
-      "alerts": 34,
-      "alert_rate": 0.09090909090909091
+      "alerts": 35,
+      "alert_rate": 0.09358288770053476
     }
   }
 }

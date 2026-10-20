@@ -1,7 +1,7 @@
 {
   "experiment": "zero_shot_synthetic_to_real",
   "model_path": "artifacts/snn_model.npz",
-  "esc50_root": "/home/inwrongplannet/code/ESC-50",
+  "esc50_root": "/Users/kavyaanimi/Downloads/ECOO/datasets/ESC-50",
   "n_real_clips": 480,
   "category_counts": {
     "chirping_birds": 40,
@@ -26,7 +26,7 @@
     "gunshot"
   ],
   "note_on_gunshot": "ESC-50 has no gun_shot category. gunshot is not evaluated in this experiment and is absent from classes_covered by design, not by error.",
-  "argmax_accuracy": 0.15625,
+  "argmax_accuracy": 0.16041666666666668,
   "argmax_confusion_matrix": [
     [
       0,
@@ -41,16 +41,16 @@
       4
     ],
     [
-      28,
-      135,
+      29,
+      134,
       23,
       14
     ],
     [
-      102,
-      81,
+      101,
+      80,
       36,
-      21
+      23
     ]
   ],
   "argmax_per_class": {
@@ -61,9 +61,9 @@
       "support": 0
     },
     "chainsaw": {
-      "precision": 0.1255,
+      "precision": 0.1265,
       "recall": 0.775,
-      "f1": 0.216,
+      "f1": 0.2175,
       "support": 40
     },
     "vehicle": {
@@ -73,9 +73,9 @@
       "support": 200
     },
     "ambient": {
-      "precision": 0.5385,
-      "recall": 0.0875,
-      "f1": 0.1505,
+      "precision": 0.561,
+      "recall": 0.0958,
+      "f1": 0.1637,
       "support": 240
     }
   },
@@ -92,8 +92,8 @@
     },
     "vehicle": {
       "n": 200,
-      "alerts": 68,
-      "alert_rate": 0.34
+      "alerts": 69,
+      "alert_rate": 0.345
     }
   }
 }

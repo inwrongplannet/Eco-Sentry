@@ -11,8 +11,8 @@ UrbanSound8K is natively provided as 10 pre-defined folds (fold1 through fold10)
 
 ## Experiment 3: Zero-Shot (Gunshot Evaluation)
 The zero-shot evaluation on the UrbanSound8K dataset yields the first real-audio result for the `gunshot` class in this project. 
-When the purely synthetic-trained model was evaluated on the mapped UrbanSound8K categories without any retraining, the overall argmax accuracy was **7.9%**.
-For the `gunshot` category specifically (n = 374 clips), the alert rate was **9.1%**. 
+When the purely synthetic-trained model was evaluated on the mapped UrbanSound8K categories without any retraining, the overall argmax accuracy was **7.8%**.
+For the `gunshot` category specifically (n = 374 clips), the alert rate was **9.4%**. 
 
 ## Multi-Seed Combined Retraining (Experiment 7)
 To ensure robustness and meet rigorous research integrity standards, the retraining experiment combining Synthetic, ESC-50, and UrbanSound8K data was run across **10 random seeds** (42, 43, 44, 45, 46, 47, 48, 49, 50, 51). 
@@ -33,14 +33,25 @@ Crucially, with the inclusion of the per-class metrics tracking, the combined re
 - **Seed 50:** 63.2% (n=220)
 - **Seed 51:** 61.9% (n=218)
 
+## Full-Budget Retraining (Escalated Data Budget)
+
+The 10-seed run above used a deliberately small real-data budget (UrbanSound8K capped at 60 clips/category -> 360 clips; 600 synthetic clips; 60 epochs). Scaling the budget to the full mapped corpus (UrbanSound8K cap 400/category -> 2,374 clips; 1,200 synthetic clips; 120 epochs) over 5 seeds (42-46) raises real-only accuracy substantially:
+
+- **80.2% +/- 4.0% real-only accuracy (n=671)**
+- **Gunshot recall 81.0% +/- 9.2%**
+- Per seed: 42: 83.6%, 43: 77.4%, 44: 83.7%, 45: 74.8%, 46: 81.6%
+
+The small-budget 10-seed run is archived in `iterations_small_budget_10seed/`; the escalated run is in `iterations/`. The gain is attributable to the larger real-audio budget, not to any architectural change.
+
 ## Cross-Dataset Comparison Table
 
 | Experiment | Real-audio accuracy | n | Gunshot covered? |
 |---|---|---|---|
-| ESC-50 zero-shot (earlier plan) | 15.6% | 480 | No |
-| ESC-50 retrained, real-only (earlier plan) | 67.1% | 146 | No |
-| UrbanSound8K zero-shot, gunshot only (T4) | 9.1% | 374 | Yes |
-| ESC-50 + UrbanSound8K retrained, real-only, 10 seeds (T7) | 65.8% ± 3.5% (Gunshot recall: 69.2% ± 6.5%) | 217-220 | Yes |
+| ESC-50 zero-shot (earlier plan) | 16.0% | 480 | No |
+| ESC-50 retrained, real-only (earlier plan) | 65.8% | 146 | No |
+| UrbanSound8K zero-shot, gunshot only (T4) | 9.4% | 374 | Yes |
+| ESC-50 + UrbanSound8K retrained, real-only, 10 seeds, small budget (T7) | 65.8% +/- 3.5% (Gunshot recall: 69.2% +/- 6.5%) | 217-220 | Yes |
+| ESC-50 + UrbanSound8K retrained, real-only, 5 seeds, **full budget** | **80.2% +/- 4.0%** (Gunshot recall: 81.0% +/- 9.2%) | 671 | Yes |
 
 ## Limitations
 - **Chainsaw Category:** The `chainsaw` category remains unrepresented in the real-audio validation. Neither ESC-50 nor UrbanSound8K contains chainsaw samples, meaning it remains a synthetic-only class in our evaluation.

@@ -8,6 +8,11 @@ The document's "CRITICAL CORRECTIONS" table is authoritative here: quiescent
 power is **50 mW** (ARM Cortex-M7 + always-on audio codec), not the 0.5 mW used
 in the earlier optimistic projection.  That single number is why the realistic
 answer is "solar-sustained or ~10-20 days on battery alone", not "60+ days".
+
+Because quiescent power is 50 mW, the system-level power-reduction ceiling is
+600 / (50 + 3) ~ 11x, so the acceptance target here is **10x** (the original
+50-75x headline assumed 0.5 mW quiescent and is not physical).  The SNN compute
+path on its own still beats the CNN baseline by ~18x.
 """
 
 from __future__ import annotations
