@@ -83,6 +83,11 @@ def build_parser() -> argparse.ArgumentParser:
     p_synth.add_argument("--duration", type=float, default=10.0)
     p_synth.add_argument("--forest", choices=sorted(SCENARIOS) + ["mixed"], default="corbett")
 
+    p_dash = sub.add_parser("dashboard", help="serve and view the dashboard without re-running the pipeline")
+    p_dash.add_argument("--port", type=int, default=8080, help="local server port (default: 8080)")
+    p_dash.add_argument("--out", type=Path, default=Path("artifacts"), help="artifacts directory (default: artifacts)")
+    p_dash.add_argument("--no-browser", action="store_true", help="do not auto-open browser")
+
     return parser
 
 
@@ -232,6 +237,54 @@ def cmd_synth(args) -> int:
     return 0
 
 
+def cmd_dashboard(args) -> int:
+    import http.server
+    import socketserver
+    import webbrowser
+    from .pipeline import render_dashboard
+
+    out_dir = Path(args.out)
+    if not (out_dir / "pipeline_report.json").exists():
+        alt_dir = Path("Eco-Sentry") / args.out
+        if (alt_dir / "pipeline_report.json").exists():
+            out_dir = alt_dir
+
+    report_file = out_dir / "pipeline_report.json"
+    if not report_file.exists():
+        print(f"Error: no pipeline_report.json found in {out_dir}. Run the pipeline first or pass --out.")
+        return 1
+
+    report = json.loads(report_file.read_text(encoding="utf-8"))
+    dash_path = render_dashboard(report, out_dir)
+    print(f"Eco-Sentry dashboard generated at: {dash_path.resolve()}")
+
+    port = args.port
+    class Handler(http.server.SimpleHTTPRequestHandler):
+        def __init__(self, *a, **kw):
+            super().__init__(*a, directory=str(out_dir), **kw)
+
+    url = f"http://localhost:{port}/dashboard.html"
+    print("\n" + "=" * 64)
+    print("  ECO-SENTRY DASHBOARD RUNNING")
+    print(f"  URL:        {url}")
+    print(f"  Local file: {dash_path.resolve()}")
+    print("  Press Ctrl+C to stop the dashboard server")
+    print("=" * 64 + "\n")
+
+    if not args.no_browser:
+        try:
+            webbrowser.open(url)
+        except Exception:
+            pass
+
+    try:
+        with socketserver.TCPServer(("", port), Handler) as httpd:
+            httpd.serve_forever()
+    except KeyboardInterrupt:
+        print("\nDashboard server stopped.")
+    return 0
+
+
 _COMMANDS = {
     "run": cmd_run,
     "dataset": cmd_dataset,
@@ -241,6 +294,7 @@ _COMMANDS = {
     "network": cmd_network,
     "delivery": cmd_delivery,
     "synth": cmd_synth,
+    "dashboard": cmd_dashboard,
 }
 
 

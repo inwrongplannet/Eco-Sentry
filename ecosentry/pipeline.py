@@ -842,10 +842,21 @@ def render_dashboard(report: Dict, out_dir: Path) -> Path:
     and write the result to out_dir/dashboard.html (Phase 0, Task P0.3).
     Also attaches committed real-audio validation results, if present,
     under report["real_audio_validation"] -- see _load_real_audio_validation."""
+    try:
+        from .visualizer import generate_all_visualizations
+        generate_all_visualizations(report, out_dir)
+    except Exception:
+        pass
     template_path = Path(__file__).parent / "dashboard_template.html"
     template = template_path.read_text(encoding="utf-8")
     report = dict(report)
     report["real_audio_validation"] = _load_real_audio_validation(out_dir)
+    alert_path = out_dir / "alert_events.json"
+    if alert_path.exists():
+        try:
+            report["alert_events"] = json.loads(alert_path.read_text(encoding="utf-8"))[:20]
+        except Exception:
+            pass
     injected = template.replace("__REPORT_JSON__", json.dumps(report, default=str))
     out_path = out_dir / "dashboard.html"
     out_path.write_text(injected, encoding="utf-8")
